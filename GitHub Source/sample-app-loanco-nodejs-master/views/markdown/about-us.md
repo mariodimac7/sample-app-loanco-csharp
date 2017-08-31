@@ -9,7 +9,9 @@
 
 <div class="row"><div class="col-md-6">
 
-__GitHub: <a href="https://github.com/DocuSign/sample-app-loanco-nodejs" rel="nofollow">https://github.com/DocuSign/loanco-sample-app-nodejs</a>__
+__GitHub Node.JS: <a href="https://github.com/DocuSign/sample-app-loanco-nodejs" rel="nofollow">https://github.com/DocuSign/sample-app-loanco-nodejs</a>__
+<br />
+__GitHub C#: <a href="https://github.com/DocuSign/sample-app-loanco-csharp" rel="nofollow">https://github.com/DocuSign/sample-app-loanco-csharp</a>__
 
 <br />
 <br />
@@ -49,14 +51,20 @@ https://apiexplorer.docusign.com/
 <h5>Developer Community</h5> 
 <a href="http://stackoverflow.com/questions/tagged/docusignapi" rel="nofollow">http://stackoverflow.com/questions/tagged/docusignapi</a>
 
+<h5>Follow us on Twitter</h5> 
+<a href="http://twitter.com/DocuSignAPI" rel="nofollow">http://twitter.com/DocuSignAPI</a>
+
+<h5>Like us on Facebook</h5> 
+<a href="http://facebook.com/DocuSignAPI" rel="nofollow">http://facebook.com/DocuSignAPI</a>
+
 </div></div>
 
 ### About DocuSign 
 
-* More than __100 million users__ in __188 countries__
-* More than 225,000 companies
-* More than 130,000 new unique users join The DocuSign Global Trust Network every day
-* More than 62% of documents are completed within one hour on The DocuSign Global Trust Network
+* More than __200 million users__ in __188 countries__
+* More than 300,000 companies
+* More than 300,000 new unique users join The DocuSign Global Trust Network every day
+* More than 64% of documents are completed within one hour on The DocuSign Global Trust Network
 * DocuSign is available in 43 languages
 
 <br />

@@ -67,23 +67,6 @@ router.post('/loan/auto', function (req, res, next) {
             };
         }
 
-    //ATM TODO: GET THIS LOGIC WORKING IN C#
-        //if (body.inputCosignerCheckbox) {
-        //    if (body.inputSigningLocationCosigner == 'embedded') {
-        //        var tCoSignerRecipient = {
-        //            recipientId: _.find(app.config.templatesByKey.cosigner_on_auto_loan.json.recipients.signers, { roleName: 'cosigner' }).recipientId,
-        //            clientUserId: tRoleCosigner.clientUserId,
-        //            name: tRoleCosigner.name,
-        //            email: tRoleCosigner.email
-        //        }
-        //        req.session.remainingSigners.push(tCoSignerRecipient);
-        //    } else {
-        //        req.session.remainingSigners.push('remote-signer');
-        //    }
-        //}
-
-        //req.session.remainingSigners.push('remote-signer'); // last signer is remote (employee) 
-
         if (body.inputSigningLocation == 'embedded') {
             req.session.signingUrl = viewUrl.Url;
             res.redirect('/sign/embedded');

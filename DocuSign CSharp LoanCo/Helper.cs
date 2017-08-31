@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DocuSign.eSign.Api;
 using DocuSign.eSign.Model;
-using System.Windows.Forms; //ATM Temp for MessageBox
+using System.Windows.Forms; //Needed for debugging with a MessageBox
 using System.IO;
 using System.Reflection;
 
@@ -13,24 +13,6 @@ namespace DocuSign
 {
     static class Helper
     {
-
-        //static string ReturnUrl { get; set; }
-
-        //public DocuSign.eSign.Model.Tabs MakeTab(object type, object data)
-        //{
-        //    // https://docs.docusign.com/esign/restapi/Envelopes/EnvelopeTabs/
-
-        //    // SignHere
-        //    // Custom
-        //    // FullName
-        //    // InitialHere
-        //    // InitialHereOptional
-        //    // etc.
-
-        //    tab = new docusign[type]();
-        //    tab.constructFromObject(data);
-        //    return tab;
-        //}
 
         public static string getLocalDocument(string filepath)
         {
@@ -60,9 +42,10 @@ namespace DocuSign
             // - this can be used by your app to watch the URL and detect when signing has completed (or was canceled) 
             var returnUrl = new RecipientViewRequest();
 
-            //ATM TODO: Local App Config
-            //returnUrl.ReturnUrl = app.config.auth.LocalReturnUrl + "pop/" + envelopeId;
-            returnUrl.ReturnUrl = "http://localhost:3801/" + "pop/" + envelopeId;
+            //Get Config settings from App.config
+            DocuSignConfig configSettings = new DocuSignConfig();
+            returnUrl.ReturnUrl = configSettings.LOCAL_RETURN_URL + "pop/" + envelopeId;
+
             returnUrl.AuthenticationMethod = "email";
 
             // recipient information must match embedded recipient info we provided
@@ -84,16 +67,15 @@ namespace DocuSign
             // - this can be used by your app to watch the URL and detect when signing has completed (or was canceled) 
             var returnUrl = new RecipientViewRequest();
 
-            //ATM TODO: Local App Config
-            //returnUrl.ReturnUrl = app.config.auth.LocalReturnUrl + "pop/" + envelopeId;
-            returnUrl.ReturnUrl = "http://localhost:3801/" + "pop/" + envelopeId;
+            //Get Config settings from App.config
+            DocuSignConfig configSettings = new DocuSignConfig();
+            returnUrl.ReturnUrl = configSettings.LOCAL_RETURN_URL + "pop/" + envelopeId;
+
             returnUrl.AuthenticationMethod = "email";
 
             // recipient information must match embedded recipient info we provided
             returnUrl.UserName = templateRole.Name;
             returnUrl.Email = templateRole.Email;
-            //ATM TODO
-            //returnUrl.RecipientId = templateRole.RecipientId;
             returnUrl.ClientUserId = templateRole.ClientUserId;
 
             RecipientViewRequest recipipentViewRequest = new RecipientViewRequest();
@@ -127,12 +109,6 @@ namespace DocuSign
 
         public static TemplateRole addPhoneAuthToRecipient(TemplateRole templateRole, string phonenumber)
         {
-            //ATM: Determine what properties to use for templateRole object. These are correct for the recipient object
-            //but in node.js, doesn't give a compile error
-
-            // Not enabled in demo
-            //templateRole.RequireIdLookup = "true"; //ATM TO CHECK
-            //templateRole.IdCheckConfigurationName = "Phone Auth $"; ATM TO CHECK
 
             var phoneList = new List<string> { phonenumber };
 
@@ -140,8 +116,6 @@ namespace DocuSign
             phoneAuth.SenderProvidedNumbers = phoneList;
             phoneAuth.RecipMayProvideNumber = "true";
             phoneAuth.RecordVoicePrint = "true";
-
-            //templateRole.PhoneAuthentication = phoneAuth; //ATM TO CHECK
 
             return templateRole;
         }

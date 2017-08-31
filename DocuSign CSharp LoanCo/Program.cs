@@ -265,6 +265,9 @@ namespace DocuSign
         {
             try
             {
+                //Get Config settings from App.config
+                DocuSignConfig configSettings = new DocuSignConfig();
+
                 //list to store all objects that will be returned to Node.js
                 List<object> rtn = new List<object>();
 
@@ -301,10 +304,7 @@ namespace DocuSign
                 EnvelopeDefinition envDef = new EnvelopeDefinition();
                 envDef.EmailSubject = "Auto Loan Application";
                 envDef.EmailBlurb = "Please sign the Loan application to start the application process.";
-                //envDef.TemplateId = app.config.templatesByKey.cosigner_on_auto_loan.id;
-                //ATM: Don't hard code - get this working from the /PDFs/template-auto-loan.json file
-                envDef.TemplateId = "2edae0a2-045a-48cd-9117-41d18b601369";
-                //TODO: Ask Nick why this is in the json file vs. a key in the .env file
+                envDef.TemplateId = configSettings.AUTOLOAN_TEMPLATEID;
 
                 // create a template role with a valid templateId and roleName and assign signer info
                 var tRoleApplicant = new TemplateRole();
@@ -377,8 +377,6 @@ namespace DocuSign
                 var tRoleEmployee = new TemplateRole();
                 tRoleEmployee.RoleName = "employee";
 
-                //Get Config settings from App.config
-                DocuSignConfig configSettings = new DocuSignConfig();
                 tRoleEmployee.Name = configSettings.EMPLOYEE_NAME;
                 tRoleEmployee.Email = configSettings.EMPLOYEE_EMAIL;
 
@@ -803,6 +801,7 @@ namespace DocuSign
         public string EMPLOYEE_EMAIL { get; set; } = "";
         public string EMPLOYEE_NAME { get; set; } = "";
         public string LOCAL_RETURN_URL { get; set; } = "";
+        public string AUTOLOAN_TEMPLATEID { get; set; } = "";
         public string BRAND_ID { get; set; } = "";
         public string GOOGLE_MAPS_API_KEY { get; set; } = "";
         public string GOOGLE_ANALYTICS { get; set; } = "";
@@ -821,6 +820,7 @@ namespace DocuSign
             EMPLOYEE_EMAIL = myDllConfigAppSettings.Settings["EMPLOYEE_EMAIL"].Value;
             EMPLOYEE_NAME = myDllConfigAppSettings.Settings["EMPLOYEE_NAME"].Value;
             LOCAL_RETURN_URL = myDllConfigAppSettings.Settings["LOCAL_RETURN_URL"].Value;
+            AUTOLOAN_TEMPLATEID = myDllConfigAppSettings.Settings["AUTOLOAN_TEMPLATEID"].Value;
             BRAND_ID = myDllConfigAppSettings.Settings["BRAND_ID"].Value;
             GOOGLE_MAPS_API_KEY = myDllConfigAppSettings.Settings["GOOGLE_MAPS_API_KEY"].Value;
             GOOGLE_ANALYTICS = myDllConfigAppSettings.Settings["GOOGLE_ANALYTICS"].Value;
