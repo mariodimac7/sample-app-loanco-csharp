@@ -1,0 +1,8 @@
+{
+  "resolution": "main",
+  "tree": {
+    "src": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/5a824d6ca873f9409b2f7276615a0fd2a370d692/googlemaps/index.d.ts",
+    "raw": "registry:dt/googlemaps#3.26.0+20170323101541",
+    "typings": "https://raw.githubusercontent.com/DefinitelyTyped/DefinitelyTyped/5a824d6ca873f9409b2f7276615a0fd2a370d692/googlemaps/index.d.ts"
+  }
+}

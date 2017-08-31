@@ -1,0 +1,6 @@
+C:\Users\tmann\OneDrive\documents\visual studio 2015\Projects\DocuSign\GitHub Source\sample-app-loanco-nodejs-master\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\tmann\OneDrive\Documents\Visual Studio 2015\Projects\DocuSign\GitHub Source\sample-app-loanco-nodejs-master\obj\Debug\sample-app-loanco-nodejs-master.njsprojResolveAssemblyReference.cache
+C:\Users\TonyMann\OneDrive\Documents\Visual Studio 2015\Projects\DocuSign\GitHub Source\sample-app-loanco-nodejs-master\obj\Debug\sample-app-loanco-nodejs-master.njsprojResolveAssemblyReference.cache
+C:\Users\TonyMann\OneDrive\Documents\Visual Studio 2015\Projects\DocuSign\GitHub Source\sample-app-loanco-nodejs-master\bin\Microsoft.NodejsTools.WebRole.dll
+C:\Users\TonyMann\OneDrive\Documents\Visual Studio 2017\Projects\DocuSign\Porting\GitHub Source\sample-app-loanco-nodejs-master\obj\Debug\sample-app-loanco-nodejs-master.njsprojResolveAssemblyReference.cache
+C:\Users\TonyMann\OneDrive\Documents\Visual Studio 2017\Projects\DocuSign\Porting\GitHub Source\sample-app-loanco-nodejs-master\bin\Microsoft.NodejsTools.WebRole.dll
